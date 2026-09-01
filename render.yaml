@@ -7,8 +7,8 @@ services:
     runtime: node
     plan: free
     region: frankfurt              # Région européenne (Frankfurt)
-    buildCommand: npm install       # Dépendances Node.js
-    startCommand: npm start         # Lancement de l'application
+    buildCommand: "echo 'No build required'"
+    startCommand: "node -e 'require(\"http\").createServer((req, res) => res.end(\"MK80C Portal Dummy Server is running!\")).listen(process.env.PORT || 10000);'"    
     autoDeployTrigger: checksPass         # Redéploiement automatique lors d'un git push
     
     # Variables d'environnement
