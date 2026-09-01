@@ -7,3 +7,14 @@
 body.light-theme { --ink:#15201b; --muted:#63716a; --bg:#f4f4ed; --panel:#e8ebe1; --line:#ccd2c8; }.light-theme .nav-cta { border-color:var(--line); }
 @media (max-width:760px) { .site-shell { padding:0 1.25rem; }.site-header { height:76px; }.menu-toggle { display:flex; flex-direction:column; gap:5px; padding:8px; margin-left:auto; margin-right:1rem; }.menu-toggle span { width:20px; height:1px; background:var(--ink); }.main-nav { position:absolute; top:76px; left:0; right:0; display:none; flex-direction:column; align-items:stretch; gap:0; padding:1rem; background:var(--bg); border-bottom:1px solid var(--line); }.main-nav.is-open { display:flex; }.main-nav a { padding:1rem 0; border-bottom:1px solid var(--line); }.nav-cta { text-align:center; margin-top:1rem; }.hero { min-height:600px; padding:5rem 0; }.hero-copy { grid-column:1 / -1; }.hero-aside { grid-column:1 / -1; margin-top:0; }.hero-note { display:none; } h1 { font-size:clamp(3.4rem,16vw,6rem); }.section-grid { display:block; }.section-intro { margin-bottom:3rem; }.section-space { padding:5rem 0; }.project-grid { grid-template-columns:1fr; }.project-card:nth-child(3) { grid-column:auto; max-width:none; }.project-visual { height:280px; }.project-meta { display:block; }.tag-list { justify-content:start; margin-top:1rem; }.approach { margin:0 -1.25rem; padding-left:1.25rem; padding-right:1.25rem; }.principles { grid-template-columns:1fr; gap:1.5rem; margin-top:3rem; }.principles h3 { margin-top:1rem; }.site-footer { display:grid; gap:2rem; }.copyright { text-align:left; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; } }
+
+.project-visual.violet { background:#c5a8df; }
+.project-details { opacity:.8; margin-top:.5rem!important; }
+.proof-strip { padding:2rem 0 4rem; align-items:center; }
+.proof-strip > .eyebrow { margin:0; }
+.proof-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.proof-grid div { border-left:1px solid var(--line); padding-left:1rem; }
+.proof-grid strong { display:block; color:var(--acid); font-size:2rem; letter-spacing:-.08em; }
+.proof-grid span { color:var(--muted); font:500 .62rem var(--mono); text-transform:uppercase; }
+@media (max-width:760px) { .proof-strip { display:block; padding-top:1rem; } .proof-grid { margin-top:2rem; } }
+.project-card:nth-child(3) { grid-column:auto; max-width:none; }

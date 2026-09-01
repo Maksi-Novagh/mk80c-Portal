@@ -1,14 +1,14 @@
-import { projects, filters } from './data.js';
+import { profile, projects, filters } from './data.js';
 
 const projectRoot = document.querySelector('[data-projects]');
 const filterRoot = document.querySelector('[data-filters]');
 
 function projectTemplate(project) {
   return `<article class="project-card reveal" data-tags="${project.tags.join(' ')}">
-    <a class="project-visual ${project.color}" href="${project.link}" aria-label="Voir le projet ${project.title}">
+    <a class="project-visual ${project.color}" href="#about" aria-label="Decouvrir le projet ${project.title}">
     <span class="project-number">${project.number}</span><span class="project-arrow">-></span>
       <div class="visual-lines"><i></i><i></i><i></i></div><div class="visual-word">${project.title.split(' ')[0]}</div>
-    </a><div class="project-meta"><div><p class="project-type">${project.type} / ${project.year}</p><h3>${project.title}</h3><p>${project.description}</p></div><div class="tag-list">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>
+    </a><div class="project-meta"><div><p class="project-type">${project.type} / ${project.year} / ${project.status}</p><h3>${project.title}</h3><p>${project.description}</p><p class="project-details">${project.details}</p></div><div class="tag-list">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>
   </article>`;
 }
 
@@ -46,4 +46,8 @@ const themeToggle = document.querySelector('[data-theme-toggle]');
 themeToggle.addEventListener('click', () => { const light = document.body.classList.toggle('light-theme'); localStorage.setItem('portfolio-theme', light ? 'light' : 'dark'); themeToggle.setAttribute('aria-label', light ? 'Activer le mode sombre' : 'Activer le mode clair'); });
 if (localStorage.getItem('portfolio-theme') === 'light') document.body.classList.add('light-theme');
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
+document.querySelectorAll('[data-profile-name]').forEach(node => { node.textContent = profile.name; });
+document.querySelectorAll('[data-profile-role]').forEach(node => { node.textContent = profile.role; });
+document.querySelector('[data-project-count]').textContent = projects.length;
+document.querySelector('[data-stack-count]').textContent = new Set(projects.flatMap(project => project.tags)).size;
 renderFilters(); renderProjects(); observeReveals();
