@@ -2,7 +2,7 @@ export const profile = {
   name: 'Noah Van Goethem',
   initials: 'NV',
   role: 'Developpeur full-stack et systemes',
-  location: 'Bruxelles, Belgique',
+  location: 'Anverse, Belgique',
   availability: 'Disponible pour des projets ambitieux',
   email: 'vgt.noah@gmail.com'
 };
