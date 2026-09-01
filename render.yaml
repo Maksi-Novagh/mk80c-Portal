@@ -24,6 +24,5 @@ services:
     name: mk80c-portfolio
     runtime: static
     plan: free
-    region: frankfurt
     staticPublishPath: portfolio
     autoDeployTrigger: checksPass
