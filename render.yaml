@@ -19,3 +19,10 @@ services:
         value: "10000"              # Port interne par défaut sur Render
       - key: SESSION_SECRET
         generateValue: true         # Clé secrète générée automatiquement par Render
+
+  - type: static_site
+    name: mk80c-portfolio
+    plan: free
+    region: frankfurt
+    staticPublishPath: portfolio
+    autoDeploy: true

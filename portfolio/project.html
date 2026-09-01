@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Étude de cas fictive issue de la constellation DefSky Studio.">
+  <meta name="theme-color" content="#050816">
+  <title>Concept — DefSky Studio</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/dynamic.css?v=4">
+  <link rel="stylesheet" href="assets/css/brand.css?v=4">
+</head>
+
+<body class="dark">
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index" aria-label="Accueil de DefSky Studio">
+        <span class="brand-mark" aria-hidden="true">DS</span>
+        <span class="brand-wording">
+          <span class="brand-name">DefSky Studio</span>
+          <span class="brand-tagline">Change the sky</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="primaryNav" data-nav aria-label="Navigation principale">
+        <a href="index">Accueil</a>
+        <a href="projects" class="active" aria-current="page">Constellation</a>
+        <a href="about">Studio</a>
+        <a href="contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Passer au ciel de l’aube" aria-pressed="true" title="Ciel de l’aube">
+          <span class="theme-icon" data-theme-icon aria-hidden="true">☀</span>
+        </button>
+        <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-controls="primaryNav" aria-expanded="false">
+          <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-backdrop hidden></div>
+
+  <main id="main-content" class="project-detail-shell reveal" data-project-detail>
+    <p class="project-loading">Le concept se dessine…</p>
+  </main>
+
+  <noscript>
+    <p class="project-empty">Activez JavaScript pour afficher cette étude fictive.</p>
+  </noscript>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand" href="index" aria-label="Accueil de DefSky Studio">
+          <span class="brand-mark" aria-hidden="true">DS</span>
+          <span class="brand-wording">
+            <span class="brand-name">DefSky Studio</span>
+            <span class="brand-tagline">Change the sky</span>
+          </span>
+        </a>
+        <p class="footer-copy">Une étude fictive, une direction visuelle bien réelle.</p>
+      </div>
+      <nav class="footer-links" aria-label="Liens externes">
+        <a href="https://www.linkedin.com/in/noah-van-goethem-40a919399/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Maksi-Novagh" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://discord.com/users/880009412700418058" target="_blank" rel="noopener noreferrer">Discord</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> DefSky Studio</span>
+      <span class="footer-signature">Ensemble, changeons ce ciel sombre.</span>
+    </div>
+  </footer>
+
+  <script src="assets/data/projects.js?v=4"></script>
+  <script src="assets/js/app.js?v=4"></script>
+  <script src="assets/js/projects.js?v=4"></script>
+  <script src="assets/js/brand.js?v=4"></script>
+</body>
+</html>
