@@ -20,9 +20,10 @@ services:
       - key: SESSION_SECRET
         generateValue: true         # Clé secrète générée automatiquement par Render
 
-  - type: static_site
+  - type: web
     name: mk80c-portfolio
+    runtime: static
     plan: free
     region: frankfurt
     staticPublishPath: portfolio
-    autoDeploy: true
+    autoDeployTrigger: checksPass
