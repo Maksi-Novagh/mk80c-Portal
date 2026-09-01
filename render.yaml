@@ -1,0 +1,21 @@
+# Blueprint specification pour Render (render.yaml)
+# Documentation : https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: mk80c-portal
+    runtime: node
+    plan: free
+    region: frankfurt              # Région européenne (Frankfurt)
+    buildCommand: npm install       # Dépendances Node.js
+    startCommand: npm start         # Lancement de l'application
+    autoDeployTrigger: 'on'         # Redéploiement automatique lors d'un git push
+    
+    # Variables d'environnement
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"              # Port interne par défaut sur Render
+      - key: SESSION_SECRET
+        generateValue: true         # Clé secrète générée automatiquement par Render
