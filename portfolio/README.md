@@ -6,14 +6,14 @@ Portfolio public, responsive et sans dependance de build. La page est rendue dep
 
 ```text
 portfolio/
-├── index.html
-├── static.json
-├── README.md
-└── assets/
-    ├── css/style.css
-    └── js/
-        ├── app.js
-        └── data.js
+|-- index.html
+|-- static.json
+|-- README.md
+`-- assets/
+    |-- css/style.css
+    `-- js/
+        |-- app.js
+        `-- data.js
 ```
 
 ## Personnalisation rapide
