@@ -5,10 +5,10 @@ const filterRoot = document.querySelector('[data-filters]');
 
 function projectTemplate(project) {
   return `<article class="project-card reveal" data-tags="${project.tags.join(' ')}">
-    <a class="project-visual ${project.color}" href="#about" aria-label="Decouvrir le projet ${project.title}">
+    <button class="project-visual ${project.color}" type="button" data-project-open="${project.number}" aria-label="Decouvrir le projet ${project.title}">
     <span class="project-number">${project.number}</span><span class="project-arrow">-></span>
       <div class="visual-lines"><i></i><i></i><i></i></div><div class="visual-word">${project.title.split(' ')[0]}</div>
-    </a><div class="project-meta"><div><p class="project-type">${project.type} / ${project.year} / ${project.status}</p><h3>${project.title}</h3><p>${project.description}</p><p class="project-details">${project.details}</p></div><div class="tag-list">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>
+    </button><div class="project-meta"><div><p class="project-type">${project.type} / ${project.year} / ${project.status}</p><h3>${project.title}</h3><p>${project.description}</p><p class="project-details">${project.details}</p></div><div class="tag-list">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>
   </article>`;
 }
 
@@ -28,6 +28,35 @@ function renderFilters() {
     renderProjects(button.dataset.filter);
   });
 }
+
+const projectDialog = document.querySelector('[data-project-dialog]');
+const dialogTitle = projectDialog.querySelector('[data-dialog-title]');
+const dialogType = projectDialog.querySelector('[data-dialog-type]');
+const dialogDescription = projectDialog.querySelector('[data-dialog-description]');
+const dialogDetails = projectDialog.querySelector('[data-dialog-details]');
+const dialogRole = projectDialog.querySelector('[data-dialog-role]');
+const dialogChallenge = projectDialog.querySelector('[data-dialog-challenge]');
+const dialogOutcome = projectDialog.querySelector('[data-dialog-outcome]');
+
+function openProject(number) {
+  const project = projects.find(item => item.number === number);
+  if (!project) return;
+  dialogTitle.textContent = project.title;
+  dialogType.textContent = `${project.type} / ${project.year} / ${project.status}`;
+  dialogDescription.textContent = project.description;
+  dialogDetails.textContent = project.details;
+  dialogRole.textContent = project.role;
+  dialogChallenge.textContent = project.challenge;
+  dialogOutcome.textContent = project.outcome;
+  projectDialog.showModal();
+}
+
+projectRoot.addEventListener('click', event => {
+  const trigger = event.target.closest('[data-project-open]');
+  if (trigger) openProject(trigger.dataset.projectOpen);
+});
+projectDialog.addEventListener('click', event => { if (event.target === projectDialog) projectDialog.close(); });
+projectDialog.querySelector('[data-dialog-close]').addEventListener('click', () => projectDialog.close());
 
 function observeReveals(scope = document) {
   const items = scope.querySelectorAll('.reveal:not(.is-visible)');

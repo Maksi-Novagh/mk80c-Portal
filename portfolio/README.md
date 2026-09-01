@@ -29,8 +29,6 @@ La selection actuelle reprend les projets publics identifies dans les espaces de
 
 - TechSuite et DefSky: ecosysteme Roblox, vitrine produit et portail developpeur.
 - NetTrack, SoundSphere, Genealogie, ActionCam Control Pro et Scrcpy Fluent GUI: applications desktop Windows.
-- Shmira RoIP, Chabad Tracking, Chabad Kiosk et CJT Platform: backend, outils operationnels et data web.
-- RoN QG, ReadyOrNot Bot et Discord Logging Suite: produits communautaires et automatisation Discord.
-- DJI Mic MO et Core-04 Ops: tooling media et infrastructure Linux.
+- DJI Mic MO: tooling media et prototypage Python.
 
-Les donnees sensibles ne sont pas copiees dans le site: secrets, bases locales, tokens, identifiants techniques prives et URLs d infrastructure internes restent exclus.
+Les projets confidentiels sont volontairement absents du dataset public. Les donnees sensibles ne sont pas copiees dans le site: secrets, bases locales, tokens, identifiants techniques prives et URLs d infrastructure internes restent exclus.

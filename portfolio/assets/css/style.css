@@ -18,3 +18,16 @@ body.light-theme { --ink:#15201b; --muted:#63716a; --bg:#f4f4ed; --panel:#e8ebe1
 .proof-grid span { color:var(--muted); font:500 .62rem var(--mono); text-transform:uppercase; }
 @media (max-width:760px) { .proof-strip { display:block; padding-top:1rem; } .proof-grid { margin-top:2rem; } }
 .project-card:nth-child(3) { grid-column:auto; max-width:none; }
+.project-visual { width:100%; border:0; text-align:left; font:inherit; cursor:pointer; }
+.project-dialog { width:min(760px, calc(100% - 2rem)); border:1px solid var(--line); background:var(--panel); color:var(--ink); padding:clamp(1.5rem, 5vw, 4rem); }
+.project-dialog::backdrop { background:#080a0acc; backdrop-filter:blur(5px); }
+.project-dialog h2 { margin:1rem 0 1.5rem; }
+.dialog-close { position:absolute; top:1.25rem; right:1.25rem; border:1px solid var(--line); background:transparent; color:var(--muted); width:2rem; height:2rem; }
+.dialog-close:hover { color:var(--acid); border-color:var(--acid); }
+.dialog-intro { font-size:clamp(1.2rem, 2vw, 1.6rem); line-height:1.3; max-width:620px; }
+.dialog-details { color:var(--muted); line-height:1.6; max-width:620px; }
+.dialog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:3rem; }
+.dialog-grid div { border-top:1px solid var(--line); padding-top:.8rem; }
+.dialog-grid span { color:var(--acid); font:500 .62rem var(--mono); text-transform:uppercase; }
+.dialog-grid p { color:var(--muted); font-size:.78rem; line-height:1.5; }
+@media (max-width:760px) { .dialog-grid { grid-template-columns:1fr; margin-top:2rem; } }
