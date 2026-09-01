@@ -23,6 +23,5 @@ services:
   - type: web
     name: mk80c-portfolio
     runtime: static
-    plan: free
     staticPublishPath: portfolio
     autoDeployTrigger: checksPass
